@@ -16,20 +16,6 @@ export const App = () => {
     localStorage.setItem(CONTACTS, JSON.stringify(contacts));
   }, [contacts]);
 
-  // componentDidMount() {
-  //   const contacts = JSON.parse(localStorage.getItem(CONTACTS));
-  //   if (contacts) {
-  //     this.setState({ contacts });
-  //   }
-  // }
-
-  // componentDidUpdate(_, prevState) {
-  //   if (prevState.contacts === this.state.contacts) {
-  //     return;
-  //   }
-  //   localStorage.setItem(CONTACTS, JSON.stringify(this.state.contacts));
-  // }
-
   const updateState = newContact => {
     const alreadyExist = contacts.some(
       contact => contact.name.toLowerCase() === newContact.name.toLowerCase()
@@ -52,10 +38,6 @@ export const App = () => {
       contact => contact.id !== contactId
     );
     setContacts(filteredContacts);
-
-    // this.setState({
-    //   contacts: this.state.contacts.filter(contact => contact.id !== contactId),
-    // });
   };
 
   const getFilteredContacts = () => {
